@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique sans journaux — VPV Ok</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<a class="brand" href="./index.html">
+  <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 .6 30.1 6.4v10.2c0 8.3-6.4 13.5-14.1 15.1C8.3 30.1 1.9 24.9 1.9 16.6V6.4z" fill="#00c47a"/>
+    <path d="M9.9 15.7 14.4 20.2 22.4 11.5" fill="none" stroke="#042017" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span>VPV <span class="ok">Ok</span></span>
+</a>
+<h1>Politique sans journaux</h1>
+<p class="updated">Dernière mise à jour : 4 novembre 2026</p>
+</header>
+
+<p>Beaucoup de services affirment ne rien journaliser. L'expression ne veut
+rien dire tant qu'on ne précise pas ce qui n'est pas écrit, ce qui l'est
+malgré tout, et comment on peut le vérifier. Cette page s'y emploie.</p>
+
+<h2>Ce qui n'est jamais écrit</h2>
+
+<p>Nos serveurs n'enregistrent à aucun moment :</p>
+
+<ul>
+<li><strong>les sites que vous visitez</strong>, les adresses que vous
+joignez, les ports que vous utilisez ;</li>
+<li><strong>vos requêtes DNS</strong> — notre résolveur fonctionne avec la
+journalisation désactivée ;</li>
+<li><strong>votre adresse IP d'origine</strong> ;</li>
+<li><strong>l'horodatage de vos connexions</strong> et déconnexions, une
+fois la session terminée ;</li>
+<li><strong>le contenu de vos communications</strong>, que nous ne pouvons
+de toute façon pas lire.</li>
+</ul>
+
+<p>La formulation compte : ces informations ne sont pas « effacées
+rapidement », elles ne sont pour l'essentiel jamais écrites. Un fichier
+qu'on n'ouvre pas ne peut être ni saisi, ni volé, ni communiqué par erreur.</p>
+
+<h2>Ce qui est écrit, et pourquoi</h2>
+
+<p>Nous serions malhonnêtes en affirmant ne rien conserver. Trois choses le
+sont, chacune pour une raison précise.</p>
+
+<h3>Le volume consommé dans le mois</h3>
+
+<p>Le socle gratuit est limité à 10 Go par mois civil. Appliquer cette
+limite suppose de compter, et de rattacher ce compte à un appareil. Nous
+conservons donc, par clé publique d'appareil, un total d'octets et le mois
+en cours — rien de plus. Pas la liste des sessions, pas leurs horaires, pas
+leurs destinations.</p>
+
+<p>Le total repart à zéro à chaque changement de mois.</p>
+
+<h3>L'état de l'abonnement</h3>
+
+<p>Pour ouvrir les emplacements VPV Ok+ à ceux qui les ont payés, nous
+conservons le produit souscrit, sa date d'échéance et l'identifiant de
+transaction de la boutique.</p>
+
+<h3>Les sessions en cours</h3>
+
+<p>Tant qu'un tunnel est ouvert, le serveur doit savoir quelle adresse il
+vous a attribuée, sans quoi vos paquets n'arriveraient nulle part. Cette
+information existe pendant la connexion et <strong>la ligne est supprimée à
+la fermeture</strong>. Il n'en reste aucun historique.</p>
+
+<h2>Comment c'est tenu, techniquement</h2>
+
+<p>Une politique n'a de valeur que si l'architecture la rend difficile à
+enfreindre par inadvertance.</p>
+
+<ul>
+<li><strong>La table des sessions ne contient que des sessions ouvertes.</strong>
+Il n'existe pas de table d'historique où des données pourraient
+s'accumuler : la ligne est détruite à la fermeture du tunnel.</li>
+<li><strong>Le journal applicatif nomme les serveurs et les routes, jamais
+les appelants.</strong> Aucune adresse IP ni clé d'appareil n'y figure.</li>
+<li><strong>Le filtrage anti-abus n'inspecte pas le trafic.</strong> Les
+limites appliquées portent sur le comportement du protocole — nombre de
+connexions, ports de destination — et non sur son contenu. Une inspection
+profonde détecterait mieux certains usages, mais elle supposerait de
+regarder ce qui passe.</li>
+<li><strong>Les appareils silencieux depuis douze mois sont supprimés</strong>
+automatiquement, compteur compris.</li>
+</ul>
+
+<h2>Ce que nous ne pouvons pas fournir</h2>
+
+<p>Si une autorité nous demande de lui communiquer l'activité d'un
+utilisateur, nous répondons ce que nous pouvons démontrer : ces informations
+n'existent pas chez nous. Nous ne pouvons pas associer une adresse IP
+publique, à une date donnée, à un appareil ou à une personne.</p>
+
+<p>En revanche, nous sommes tenus de répondre aux injonctions qui nous sont
+légalement opposables, et nous ne prétendons pas pouvoir les ignorer. Le
+droit de l'Union réserve expressément le pouvoir d'une autorité d'ordonner à
+un intermédiaire technique de faire cesser une infraction.</p>
+
+<h2>Ce qui n'est pas encore en place</h2>
+
+<div class="callout">
+<p>Une politique sans journaux ne vaut que par ce qu'on peut en vérifier.
+Voici, en toute franchise, ce qui n'est pas encore fait au 4 novembre 2026.</p>
+</div>
+
+<ul>
+<li><strong>Aucun audit indépendant.</strong> Notre code serveur et notre
+configuration n'ont pas été examinés par un tiers, et aucun rapport n'a été
+publié. Tant que c'est le cas, cette page est un engagement, pas une
+garantie vérifiée.</li>
+<li><strong>Le service démarre.</strong> Les engagements ci-dessus décrivent
+la configuration appliquée à chaque serveur avant sa mise en service, et non
+un historique d'exploitation : VPV Ok est récent et son parc de serveurs est
+réduit. La liste des hébergeurs est publiée dans la
+<a href="confidentialite.html">politique de confidentialité</a> et suit
+chaque ajout.</li>
+<li><strong>Nos serveurs ne fonctionnent pas uniquement en mémoire vive.</strong>
+Une infrastructure sans disque, qui perd tout au redémarrage, offre une
+garantie structurelle que nous n'avons pas encore.</li>
+<li><strong>Aucun rapport de transparence.</strong> Nous n'avons pas encore
+publié de bilan des demandes reçues des autorités.</li>
+</ul>
+
+<p>Nous préférons l'écrire plutôt que de laisser entendre le contraire. Ces
+points constituent notre feuille de route sur ce sujet, et cette page sera
+mise à jour à mesure qu'ils seront traités.</p>
+
+<h2>Ce que vous pouvez vérifier vous-même</h2>
+
+<p>L'application comporte un <strong>contrôle d'étanchéité</strong> —
+accueil, « Vérifier l'étanchéité » — qui teste l'adresse IP vue de
+l'extérieur, les requêtes DNS et une éventuelle fuite IPv6. Il vous indique
+si votre trafic sort bien par le pays choisi, sans passer par un site
+tiers.</p>
+
+<p>L'écran Statistiques vous montre ce que l'application conserve localement,
+et vous permet de tout effacer.</p>
+
+<h2>Nous écrire</h2>
+
+<p>Une question, un doute, une erreur dans cette page :
+<a href="mailto:vpnok935@gmail.com">vpnok935@gmail.com</a>.</p>
+
+<nav class="pages">
+  <a href="index.html">Accueil</a>
+  <a href="confidentialite.html">Confidentialité</a>
+  <a href="conditions.html">Conditions d'utilisation</a>
+  <a href="sans-journaux.html" aria-current="page">Politique sans journaux</a>
+</nav>
+
+<footer>
+<p>VPV Ok — Cajazzo. Contact :
+<a href="mailto:vpnok935@gmail.com">vpnok935@gmail.com</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>

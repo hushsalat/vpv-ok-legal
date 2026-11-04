@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — VPV Ok</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<a class="brand" href="./index.html">
+  <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 .6 30.1 6.4v10.2c0 8.3-6.4 13.5-14.1 15.1C8.3 30.1 1.9 24.9 1.9 16.6V6.4z" fill="#00c47a"/>
+    <path d="M9.9 15.7 14.4 20.2 22.4 11.5" fill="none" stroke="#042017" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span>VPV <span class="ok">Ok</span></span>
+</a>
+<h1>Politique de confidentialité</h1>
+<p class="updated">Dernière mise à jour : 4 novembre 2026</p>
+</header>
+
+<p>VPV Ok est conçu pour en savoir le moins possible sur vous. Cette page
+décrit exactement ce que nous traitons, pourquoi, et pendant combien de
+temps. Elle est volontairement précise : une politique de confidentialité
+vague n'engage personne.</p>
+
+<h2>1. Qui est responsable du traitement</h2>
+
+<p>Le responsable du traitement est <strong>Cajazzo</strong>,
+personne physique éditant l'application VPV Ok à titre non professionnel. Il
+n'existe aucune société éditrice, donc aucun numéro SIREN.</p>
+
+<p>Contact : <a href="mailto:vpnok935@gmail.com">vpnok935@gmail.com</a>. Cette
+adresse reçoit l'ensemble des demandes relatives aux données personnelles, y
+compris l'exercice des droits décrits au point 8.</p>
+
+<p>Aucun délégué à la protection des données n'est désigné : la désignation
+n'est pas obligatoire ici, le traitement ne reposant ni sur un suivi
+systématique à grande échelle, ni sur des données sensibles.</p>
+
+<h2>2. Le principe : pas de compte</h2>
+
+<p>VPV Ok ne vous demande ni adresse électronique, ni nom, ni mot de passe,
+ni numéro de téléphone. Il n'existe aucun compte utilisateur.</p>
+
+<p>Votre appareil génère à la première ouverture une paire de clés
+cryptographiques. La <strong>clé publique</strong> sert d'identifiant
+technique auprès de nos serveurs : c'est elle qui permet de savoir combien
+de données il vous reste ce mois-ci et si vous êtes abonné. La
+<strong>clé privée</strong> ne quitte jamais votre appareil — elle est
+conservée dans le coffre du système (Keystore sur Android, trousseau sur
+iOS) et n'est transmise ni à nous, ni à personne.</p>
+
+<p>Cette clé est un pseudonyme. Elle ne nous permet pas de vous identifier,
+mais elle constitue une donnée à caractère personnel au sens du RGPD, et
+elle est traitée comme telle.</p>
+
+<h2>3. Ce qui reste sur votre appareil</h2>
+
+<p>Les informations suivantes sont stockées localement et ne nous sont
+jamais transmises :</p>
+
+<ul>
+<li>vos préférences (protocole, kill switch, apparence, réseaux de
+confiance) ;</li>
+<li>l'historique de vos sessions, affiché dans l'écran Statistiques, avec
+les emplacements utilisés, les durées et les volumes ;</li>
+<li>vos emplacements favoris et récents ;</li>
+<li>la mémoire locale de votre abonnement, qui sert à afficher votre
+formule sans réseau ;</li>
+<li>votre clé privée.</li>
+</ul>
+
+<p>Désinstaller l'application efface tout cela. L'historique de sessions peut
+aussi être effacé à tout moment depuis l'écran Statistiques.</p>
+
+<h2>4. Ce que nos serveurs traitent</h2>
+
+<table>
+<thead>
+<tr><th>Donnée</th><th>Finalité</th><th>Base légale</th><th>Conservation</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Clé publique de l'appareil</td>
+<td>Monter le tunnel chiffré ; rattacher le quota et l'abonnement</td>
+<td>Exécution du contrat</td>
+<td>12 mois après la dernière connexion</td>
+</tr>
+<tr>
+<td>Volume consommé dans le mois</td>
+<td>Appliquer le quota de 10 Go du socle gratuit</td>
+<td>Exécution du contrat</td>
+<td>Remis à zéro chaque mois civil</td>
+</tr>
+<tr>
+<td>État de l'abonnement : produit, échéance, identifiant de transaction</td>
+<td>Ouvrir les emplacements VPV Ok+ ; obligations comptables</td>
+<td>Exécution du contrat ; obligation légale</td>
+<td>Durée de l'abonnement, puis durée légale de conservation comptable</td>
+</tr>
+<tr>
+<td>Date du dernier Pass Ok</td>
+<td>Faire respecter le délai de quatre heures entre deux Pass</td>
+<td>Exécution du contrat</td>
+<td>12 mois après la dernière connexion</td>
+</tr>
+<tr>
+<td>Identifiant de session et adresse attribuée dans le tunnel</td>
+<td>Acheminer votre trafic pendant la connexion</td>
+<td>Exécution du contrat</td>
+<td><strong>Supprimés à la fermeture du tunnel</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>Votre adresse IP d'origine est nécessairement traversée par nos serveurs :
+sans elle, aucun paquet ne pourrait vous revenir. Elle n'est
+<strong>ni enregistrée, ni journalisée, ni associée à votre clé
+publique</strong>. Voir la <a href="sans-journaux.html">politique sans
+journaux</a>, qui détaille ce point.</p>
+
+<h3>Mesures de lutte contre les abus</h3>
+
+<p>Nos serveurs appliquent des limites techniques : blocage des ports
+d'envoi de courrier, limitation du nombre de connexions simultanées par
+appareil, blocage des ports de partage de fichiers sur les emplacements
+gratuits. Ces mesures portent sur le comportement du protocole et
+<strong>n'impliquent aucune inspection du contenu de votre trafic</strong>.
+Base légale : intérêt légitime à préserver le service et à ne pas faire
+résilier nos serveurs.</p>
+
+<h2>5. Ce que nous ne conservons pas</h2>
+
+<p>Nous ne conservons à aucun moment :</p>
+
+<ul>
+<li>les sites que vous visitez, les adresses que vous joignez, les requêtes
+DNS que vous émettez ;</li>
+<li>votre adresse IP d'origine ;</li>
+<li>l'horodatage de vos connexions et déconnexions, une fois la session
+terminée ;</li>
+<li>la correspondance entre votre clé publique et une adresse de tunnel,
+au-delà de la session ;</li>
+<li>le contenu de vos communications.</li>
+</ul>
+
+<p>Ces informations ne sont pas « supprimées rapidement » : pour l'essentiel
+elles ne sont jamais écrites. Nous ne pouvons donc pas les communiquer, y
+compris sur réquisition.</p>
+
+<h2>6. Sous-traitants et destinataires</h2>
+
+<h3>Hébergement</h3>
+
+<p>Nos serveurs sont exploités par des prestataires d'hébergement agissant
+comme sous-traitants, dans les pays où VPV Ok propose des emplacements. La
+liste nominative de ces prestataires et de leurs pays est publiée ici dès la
+mise en service du premier serveur, et tenue à jour à chaque ajout ou
+retrait.</p>
+
+<h3>Hébergement de ces pages</h3>
+
+<p>Les pages légales que vous lisez sont hébergées par GitHub, Inc.
+(88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis), via le
+service GitHub Pages. Comme tout serveur web, il journalise les requêtes
+reçues, adresse IP comprise, à des fins de sécurité et de lutte contre les
+abus. Ce traitement est celui de GitHub, et relève de sa propre politique de
+confidentialité ; il est <strong>sans aucun rapport avec le service VPN</strong>, dont
+les serveurs ne journalisent pas le trafic.</p>
+
+<p>Consulter ces pages n'exige ni compte, ni cookie. Nous n'y plaçons aucun
+traceur, aucune mesure d'audience et aucune ressource externe.</p>
+
+<ul>
+<li><a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Déclaration de confidentialité de GitHub</a></li>
+</ul>
+
+<h3>Paiement</h3>
+
+<p>Aucune offre payante n'est ouverte à ce jour ; ce paragraphe décrit le
+traitement qui s'appliquera lorsqu'il y en aura. Les abonnements sont alors
+vendus par Apple et Google, qui agissent comme revendeurs.
+<strong>Aucune donnée bancaire ne transite par VPV Ok</strong> :
+nous ne voyons ni votre carte, ni votre nom, ni votre adresse de
+facturation. Nous recevons uniquement, de leur part, la confirmation qu'un
+abonnement est actif et sa date d'échéance.</p>
+
+<ul>
+<li><a href="https://www.apple.com/legal/privacy/fr-ww/" rel="noopener">Politique de confidentialité d'Apple</a></li>
+<li><a href="https://policies.google.com/privacy?hl=fr" rel="noopener">Politique de confidentialité de Google</a></li>
+</ul>
+
+<h3>Publicité</h3>
+
+<p>L'application comporte une seule publicité, la vidéo récompensée du
+« Pass Ok », et elle ne se déclenche que si vous la demandez. Elle est
+diffusée par Google AdMob, qui agit comme responsable de traitement
+indépendant pour les données qu'il collecte à cette occasion, notamment
+l'identifiant publicitaire de votre appareil.</p>
+
+<p>Lors de la diffusion, nous transmettons à AdMob la clé publique de votre
+appareil, afin que Google nous signale à qui créditer les 2 Go. Nous ne lui
+transmettons rien d'autre.</p>
+
+<p>Dans l'Espace économique européen, au Royaume-Uni et en Suisse, cette
+publicité n'est diffusée qu'après recueil de votre consentement, que vous
+pouvez retirer à tout moment depuis les réglages de l'application.
+Les abonnés VPV Ok+ ne voient aucune publicité, et le module publicitaire
+n'est alors jamais chargé.</p>
+
+<h2>7. Transferts hors de l'Union européenne</h2>
+
+<p>Certains emplacements VPV Ok se trouvent hors de l'Union européenne, et
+vos données techniques y sont traitées lorsque vous les choisissez. Apple,
+Google et certains hébergeurs sont établis hors de l'Union. Ces transferts
+reposent sur les clauses contractuelles types de la Commission européenne ou,
+lorsqu'elle s'applique, sur une décision d'adéquation.</p>
+
+<h2>8. Vos droits</h2>
+
+<p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de
+limitation, d'opposition et de portabilité, ainsi que du droit de retirer
+votre consentement à la publicité.</p>
+
+<div class="callout">
+<p><strong>Une limite à connaître.</strong> Pour exercer ces droits sur les
+données de votre appareil, il nous faut la clé publique correspondante — il
+n'existe pas d'autre moyen de vous retrouver, puisqu'il n'y a pas de compte.
+Vous la trouverez dans Réglages → À propos de l'application.</p>
+<p>Sans cette clé, nous sommes dans l'impossibilité de vous identifier, et
+donc de répondre à votre demande. Ce n'est pas un refus : c'est la
+conséquence directe du choix de ne pas vous demander d'identité.</p>
+</div>
+
+<p>Pour exercer vos droits : <a href="mailto:vpnok935@gmail.com">vpnok935@gmail.com</a>.
+Nous répondons dans un délai d'un mois.</p>
+
+<p>Vous pouvez introduire une réclamation auprès de la Commission nationale
+de l'informatique et des libertés,
+<a href="https://www.cnil.fr/fr/plaintes" rel="noopener">cnil.fr/fr/plaintes</a>.</p>
+
+<h2>9. Mineurs</h2>
+
+<p>VPV Ok n'est pas destiné aux personnes de moins de 16 ans et ne collecte
+pas sciemment leurs données.</p>
+
+<h2>10. Modifications</h2>
+
+<p>Cette politique peut évoluer. Toute modification substantielle sera
+annoncée dans l'application avant son entrée en vigueur, et la date de
+dernière mise à jour en haut de cette page sera actualisée.</p>
+
+<nav class="pages">
+  <a href="index.html">Accueil</a>
+  <a href="confidentialite.html" aria-current="page">Confidentialité</a>
+  <a href="conditions.html">Conditions d'utilisation</a>
+  <a href="sans-journaux.html">Politique sans journaux</a>
+</nav>
+
+<footer>
+<p>VPV Ok — Cajazzo. Contact :
+<a href="mailto:vpnok935@gmail.com">vpnok935@gmail.com</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>

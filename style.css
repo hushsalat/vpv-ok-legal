@@ -1,0 +1,170 @@
+/* Pages légales VPV Ok — même palette que l'app : blanc, noir, gris, vert. */
+
+:root {
+  --bg: #ffffff;
+  --fg: #0b0f0c;
+  --fg-dim: #5c635d;
+  --line: #e1e5e1;
+  --surface: #f4f6f4;
+  --accent: #00a365;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f4f6f4;
+    --fg-dim: #9ba09c;
+    --line: #2c2f2c;
+    --surface: #161716;
+    --accent: #00e08a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 var(--sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+header { margin-bottom: 2.5rem; }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+}
+.brand .ok { color: var(--accent); }
+.brand svg { display: block; }
+
+h1 {
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  margin: 1.5rem 0 .4rem;
+}
+
+.updated {
+  color: var(--fg-dim);
+  font-size: .9rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.2rem;
+  letter-spacing: -.01em;
+  margin: 2.5rem 0 .6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 .4rem;
+}
+
+p, li { color: var(--fg); }
+p { margin: .7rem 0; }
+ul, ol { padding-left: 1.3rem; margin: .7rem 0; }
+li { margin: .35rem 0; }
+
+a { color: var(--accent); }
+
+strong { font-weight: 600; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .9em;
+  background: var(--surface);
+  padding: .1em .35em;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: .95rem;
+}
+th, td {
+  text-align: left;
+  padding: .6rem .5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--fg-dim);
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin: 1.5rem 0;
+  font-size: .95rem;
+}
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+.todo {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+nav.pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+nav.pages a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .45rem .85rem;
+  font-size: .9rem;
+  color: var(--fg);
+}
+nav.pages a:hover { border-color: var(--accent); color: var(--accent); }
+nav.pages a[aria-current] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--fg-dim);
+  font-size: .9rem;
+}
+
+@media print {
+  nav.pages, .todo { display: none; }
+  body { font-size: 11pt; }
+  a { color: inherit; text-decoration: underline; }
+}
